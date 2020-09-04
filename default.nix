@@ -14,8 +14,10 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
+  brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
+  defold = pkgs.callPackage ./pkgs/defold.nix { };
+  hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
+  wikiman = pkgs.callPackage ./pkgs/wikiman.nix { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
 }
 

@@ -1,0 +1,38 @@
+= foo-dogsquared's NUR packages
+
+My NUR packages, my second home.
+(More like tenth but you get the point.)
+
+This is a set of packages built at https://github.com/nix-community/NUR[NUR], a set of user-contributed packages.
+
+
+
+
+== Setup
+
+For now, it's not yet included at the NUR list so you'll have to directly access my NUR repo like the following:
+footnote:[Pretty much, you can access anyone's NUR Git repo as long as they have similar setup to the NUR template at https://github.com/nix-community/nur-packages-template.]
+
+[source, nix]
+----
+nixpkgs.config.packageOverrides = pkgs: {
+  nur-foo-dogsquared = import (
+    fetchTarball "https://github.com/foo-dogsquared/nix-expressions/archive/master.tar.gz") { inherit pkgs; }
+  );
+};
+----
+
+Then you can access the packages through `pkgs.nur-foo-dogsquared.$PKG`.
+footnote:[The above solution was based from this https://discourse.nixos.org/t/using-a-nur-repo-without-adding-it-to-the-main-nur-repo/5591/4[post].]
+
+You can look at the https://github.com/nix-community/NUR[official NUR README] for up-to-date instructions.
+
+
+
+
+== Status
+
+![Build and populate cache](https://github.com/nix-community/foo-dogsquared/workflows/Build%20and%20populate%20cache/badge.svg)
+
+[![Cachix Cache](https://img.shields.io/badge/cachix-foo-dogsquared-blue.svg)](https://foo-dogsquared.cachix.org)
+
