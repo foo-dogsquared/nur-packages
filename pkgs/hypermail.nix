@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     description = "A converter for emails from Unix mbox format.";
     homepage = "http://www.hypermail-project.org/";
-    license = licenses.free.gpl2Only;
+    license = licenses.gpl2Only;
     maintainers = [ maintainers.foo-dogsquared ];
     platforms = [ "i686-linux" "x86_64-linux" ];
   };
