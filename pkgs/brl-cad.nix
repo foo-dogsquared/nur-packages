@@ -55,6 +55,7 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
+    broken = true;
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
