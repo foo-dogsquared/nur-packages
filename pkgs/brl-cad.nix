@@ -12,7 +12,8 @@ libXi,
 libXft,
 libxslt,
 ncurses,
-subversion
+subversion,
+zlib,
 }:
 
 stdenv.mkDerivation rec {
@@ -22,7 +23,7 @@ stdenv.mkDerivation rec {
   src = let
     repo = "brlcad";
     tag = builtins.replaceStrings ["."] ["-"] version;
-    revision = "77033";
+    revision = "77067";
     in fetchsvn {
       url = "svn://svn.code.sf.net/p/${repo}/code/${repo}/tags/rel-${tag}";
       rev = revision;
@@ -39,15 +40,10 @@ stdenv.mkDerivation rec {
     ncurses
   ];
 
-  patches = [
-    (fetchpatch {
-      url = "https://aur.archlinux.org/cgit/aur.git/plain/build.patch?h=brlcad";
-      sha256 = "0ib95q4jcixalvs5wch4ffj4116wbnw1bwmv0jqmjir0f0hxrpc1";
-    })
-  ];
-
   cmakeFlags = [
-    "-DBRLCAD_ENABLE_STRICT=NO"
+    "-DBRLCAD_INSTALL_EXAMPLE_GEOMETRY=ON"
+    "-DBRLCAD_ENABLE_OPENGL=ON"
+    "-DBRLCAD_ENABLE_STRICT=OFF"
     "-DBRLCAD_BUNDLED_LIBS=ON"
     "-DCMAKE_BUILD_TYPE=Release"
   ];
@@ -55,7 +51,6 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = with stdenv.lib; {
-    broken = true;
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
