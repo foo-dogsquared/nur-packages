@@ -1,22 +1,13 @@
-# A solid 3D modelling tool (or something)...
-{ stdenv, fetchsvn, fetchpatch,
-appleseed,
-byacc,
-clang,
-cmake,
-flex,
-fontconfig,
-gnumake,
-libGL,
-libXi,
-libXft,
-libxslt,
-ncurses,
-subversion,
-zlib,
+{ clangStdenv,
+  cmake,
+  fetchsvn,
+  libGL,
+  libXi,
+  libXft,
+  ncurses
 }:
 
-stdenv.mkDerivation rec {
+clangStdenv.mkDerivation rec {
   pname = "brl-cad";
   version = "7.30.10";
  
@@ -33,7 +24,6 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ cmake ];
 
   buildInputs = [
-    clang
     libGL
     libXft
     libXi
@@ -41,8 +31,6 @@ stdenv.mkDerivation rec {
   ];
 
   cmakeFlags = [
-    "-DBRLCAD_INSTALL_EXAMPLE_GEOMETRY=ON"
-    "-DBRLCAD_ENABLE_OPENGL=ON"
     "-DBRLCAD_ENABLE_STRICT=OFF"
     "-DBRLCAD_BUNDLED_LIBS=ON"
     "-DCMAKE_BUILD_TYPE=Release"
@@ -50,11 +38,14 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with clangStdenv.lib; {
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
-    maintainers = [ maintainers.foo-dogsquared ];
-    platforms = [ "i686-linux" "x86_64-linux" ];
+    maintainers = with maintainers; [ foo-dogsquared ];
+    platforms = platforms.linux
+      ++ platforms.freebsd
+      ++ platforms.netbsd
+      ++ platforms.openbsd;
   };
 }

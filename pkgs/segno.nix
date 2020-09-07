@@ -1,10 +1,7 @@
 # As of 2020-09-06, there will be no testing due to one of the library (pyzbar) being broken.
 # See the following issue:
 # https://github.com/NixOS/nixpkgs/issues/7307
-{ stdenv, fetchFromGitHub, python3,
-#  pypng,
-#  pyzbar
-}:
+{ stdenv, fetchFromGitHub, python3 }:
 
 with python3.pkgs; buildPythonApplication rec {
   pname = "segno";
@@ -19,12 +16,6 @@ with python3.pkgs; buildPythonApplication rec {
 
   # For now, testing will be skipped due to broken library.
   doCheck = false;
-  checkInputs = [
-    pypng
-    pytest
-    pyzbar
-    sphinx
-  ];
 
   meta = with stdenv.lib; {
     description = "Encode QR codes without dependencies (except Python).";
