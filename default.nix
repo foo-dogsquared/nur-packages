@@ -17,7 +17,10 @@
   brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
   defold = pkgs.callPackage ./pkgs/defold.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
-  wikiman = pkgs.callPackage ./pkgs/wikiman.nix { };
+  segno = pkgs.callPackage ./pkgs/segno.nix { };
+  wikiman = pkgs.callPackage ./pkgs/wikiman { };
+  # pypng = pkgs.callPackage ./pkgs/python-packages/pypng.nix { };
+  # pyzbar = pkgs.callPackage ./pkgs/python-packages/pyzbar.nix {  };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
 }
 

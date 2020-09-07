@@ -1,0 +1,38 @@
+This patch is created as a easy way for patching into NixOS.
+The paths are kept as `/usr` to be used for `substituteInPlace` to `$out` in the build process.
+
+diff --git a/wikiman.sh b/wikiman.sh
+index f747ae3..919eca3 100755
+--- a/wikiman.sh
++++ b/wikiman.sh
+@@ -40,27 +40,16 @@ init() {
+ 
+ 	# BSD compatibility: Installation prefix
+ 
+-	case $(dirname "$0") in
+-		'/usr/bin')
+-			conf_sys_usr='/usr';
+-			conf_sys_etc='/etc';;
+-		'/usr/local/bin')
+-			conf_sys_usr='/usr/local';
+-			conf_sys_etc='/usr/local/etc';;
+-		*)
+-			echo 'error: unsupported installation path' 1>&2;
+-			exit 5;;
+-	esac
++	conf_sys_usr='@INSTALL_DIR@';
+ 
+ 	export conf_find
+ 	export conf_awk
+ 	export conf_sys_usr
+-	export conf_sys_etc
+ 
+ 	# Configuration variables
+ 
+ 	config_dir="${XDG_CONFIG_HOME:-"$HOME/.config"}/wikiman"
+-	config_file="$conf_sys_etc/wikiman.conf"
++	config_file="$conf_sys_user/share/wikiman/wikiman.conf"
+ 	config_file_usr="$config_dir/wikiman.conf"
+ 
+ 	[ -f "$config_file" ] && [ -r "$config_file" ] || \
+

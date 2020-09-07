@@ -1,28 +1,20 @@
-# A solid 3D modelling tool (or something)...
-{ stdenv, fetchsvn, fetchpatch,
-appleseed,
-byacc,
-clang,
-cmake,
-flex,
-fontconfig,
-gnumake,
-libGL,
-libXi,
-libXft,
-libxslt,
-ncurses,
-subversion
+{ clangStdenv,
+  cmake,
+  fetchsvn,
+  libGL,
+  libXi,
+  libXft,
+  ncurses
 }:
 
-stdenv.mkDerivation rec {
+clangStdenv.mkDerivation rec {
   pname = "brl-cad";
   version = "7.30.10";
  
   src = let
     repo = "brlcad";
     tag = builtins.replaceStrings ["."] ["-"] version;
-    revision = "77033";
+    revision = "77067";
     in fetchsvn {
       url = "svn://svn.code.sf.net/p/${repo}/code/${repo}/tags/rel-${tag}";
       rev = revision;
@@ -32,33 +24,28 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ cmake ];
 
   buildInputs = [
-    clang
     libGL
     libXft
     libXi
     ncurses
   ];
 
-  patches = [
-    (fetchpatch {
-      url = "https://aur.archlinux.org/cgit/aur.git/plain/build.patch?h=brlcad";
-      sha256 = "0ib95q4jcixalvs5wch4ffj4116wbnw1bwmv0jqmjir0f0hxrpc1";
-    })
-  ];
-
   cmakeFlags = [
-    "-DBRLCAD_ENABLE_STRICT=NO"
+    "-DBRLCAD_ENABLE_STRICT=OFF"
     "-DBRLCAD_BUNDLED_LIBS=ON"
     "-DCMAKE_BUILD_TYPE=Release"
   ];
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with clangStdenv.lib; {
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
-    maintainers = [ maintainers.foo-dogsquared ];
-    platforms = [ "i686-linux" "x86_64-linux" ];
+    maintainers = with maintainers; [ foo-dogsquared ];
+    platforms = platforms.linux
+      ++ platforms.freebsd
+      ++ platforms.netbsd
+      ++ platforms.openbsd;
   };
 }
