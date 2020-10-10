@@ -17,6 +17,7 @@
   brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
   defold = pkgs.callPackage ./pkgs/defold.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
+  openring = pkgs.callPackage ./pkgs/openring.nix {  };
   segno = pkgs.callPackage ./pkgs/segno.nix { };
   tic-80 = pkgs.callPackage ./pkgs/tic-80.nix { };
   wikiman = pkgs.callPackage ./pkgs/wikiman { };
