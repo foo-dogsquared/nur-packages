@@ -18,6 +18,7 @@
   defold = pkgs.callPackage ./pkgs/defold.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
   segno = pkgs.callPackage ./pkgs/segno.nix { };
+  tic-80 = pkgs.callPackage ./pkgs/tic-80.nix { };
   wikiman = pkgs.callPackage ./pkgs/wikiman { };
   # pypng = pkgs.callPackage ./pkgs/python-packages/pypng.nix { };
   # pyzbar = pkgs.callPackage ./pkgs/python-packages/pyzbar.nix {  };
