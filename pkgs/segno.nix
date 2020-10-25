@@ -3,7 +3,8 @@
 # https://github.com/NixOS/nixpkgs/issues/7307
 { stdenv, fetchFromGitHub, python3 }:
 
-with python3.pkgs; buildPythonApplication rec {
+with python3.pkgs;
+buildPythonApplication rec {
   pname = "segno";
   version = "1.3.1";
 
@@ -19,7 +20,7 @@ with python3.pkgs; buildPythonApplication rec {
 
   meta = with stdenv.lib; {
     description = "Encode QR codes without dependencies (except Python).";
-    homepage = https://github.com/heuer/segno;
+    homepage = "https://github.com/heuer/segno";
     license = licenses.bsd3;
     maintainers = with maintainers; [ foo-dogsquared ];
   };

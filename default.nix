@@ -7,6 +7,7 @@
 #     nix-build -A mypackage
 
 { pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 {
   # The `lib`, `modules`, and `overlay` names are special
@@ -19,11 +20,10 @@
   edir = pkgs.callPackage ./pkgs/edir.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
   julia-bin = pkgs.callPackage ./pkgs/julia-bin.nix { };
-  license-cli = pkgs.callPackage ./pkgs/license-cli.nix {  };
-  openring = pkgs.callPackage ./pkgs/openring.nix {  };
+  license-cli = pkgs.callPackage ./pkgs/license-cli.nix { };
+  openring = pkgs.callPackage ./pkgs/openring.nix { };
   segno = pkgs.callPackage ./pkgs/segno.nix { };
   tic-80 = pkgs.callPackage ./pkgs/tic-80.nix { };
-  wikiman = pkgs.callPackage ./pkgs/wikiman { };
   # pypng = pkgs.callPackage ./pkgs/python-packages/pypng.nix { };
   # pyzbar = pkgs.callPackage ./pkgs/python-packages/pyzbar.nix {  };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };

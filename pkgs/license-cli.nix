@@ -24,8 +24,9 @@ rustPlatform.buildRustPackage rec {
   '';
 
   meta = with stdenv.lib; {
-    description = "Command-line tool to easily add a license file to your project";
-    homepage = https://git.sr.ht/~zethra/license;
+    description =
+      "Command-line tool to easily add a license file to your project";
+    homepage = "https://git.sr.ht/~zethra/license";
     license = licenses.mpl20;
     maintainers = with maintainers; [ foo-dogsquared ];
   };

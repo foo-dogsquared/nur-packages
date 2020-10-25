@@ -8,13 +8,12 @@ stdenv.mkDerivation rec {
   version = "1.5.2";
 
   src = fetchurl {
-    url = "https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.2-linux-x86_64.tar.gz";
+    url =
+      "https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.2-linux-x86_64.tar.gz";
     sha256 = "sha256-bacE+tzvo5clUD5Mepz6GlcLqKZHxL2N5poRj0NYRjA=";
   };
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-  ];
+  nativeBuildInputs = [ autoPatchelfHook ];
 
   installPhase = ''
     mkdir $out
@@ -23,7 +22,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "The binary build for Julia 1.5 on 64-bit Linux systems.";
-    homepage = https://julialang.org/;
+    homepage = "https://julialang.org/";
     license = licenses.free;
     maintainers = with maintainers; [ foo-dogsquared ];
     platforms = [ "x86_64-linux" ];

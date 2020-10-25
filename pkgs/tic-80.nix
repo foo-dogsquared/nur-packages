@@ -1,13 +1,5 @@
-{ stdenv,
-  alsaLib,
-  cmake,
-  curl,
-  fetchFromGitHub,
-  freeglut,
-  gtk3,
-  libGLU,
-  mesa,
-  pkgconfig }:
+{ stdenv, alsaLib, cmake, curl, fetchFromGitHub, freeglut, gtk3, libGLU, mesa
+, pkgconfig }:
 
 stdenv.mkDerivation rec {
   pname = "tic-80";
@@ -23,14 +15,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ cmake pkgconfig ];
 
-  buildInputs = [
-    alsaLib
-    curl
-    freeglut
-    gtk3
-    libGLU
-    mesa
-  ];
+  buildInputs = [ alsaLib curl freeglut gtk3 libGLU mesa ];
 
   postUnpack = ''
     substituteInPlace source/CMakeLists.txt \
@@ -40,9 +25,7 @@ stdenv.mkDerivation rec {
       --replace "install (FILES \''${PROJECT_SOURCE_DIR}/build/linux/tic80.xml DESTINATION \''${TIC80_DESKTOP_DIR})" "install (FILES \''${PROJECT_SOURCE_DIR}/build/linux/tic80.xml DESTINATION $out/share/applications)"
   '';
 
-  cmakeFlags = [
-    "-DBUILD_PRO=TRUE"
-  ];
+  cmakeFlags = [ "-DBUILD_PRO=TRUE" ];
 
   meta = with stdenv.lib; {
     description = "A fantasy computer with built-in game dev tools.";

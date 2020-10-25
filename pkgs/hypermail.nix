@@ -1,6 +1,4 @@
-{ stdenv, fetchFromGitHub,
-yacc
-}:
+{ stdenv, fetchFromGitHub, yacc }:
 
 stdenv.mkDerivation rec {
   pname = "hypermail";
@@ -13,9 +11,7 @@ stdenv.mkDerivation rec {
     sha256 = "1h65k02py1y9hc6y5235ysss260nyfy3zkxvq22gi4ckw6wrfkvs";
   };
 
-  buildInputs = [
-    yacc
-  ];
+  buildInputs = [ yacc ];
 
   patchPhase = ''
     patchShebangs install-sh
