@@ -18,6 +18,7 @@
   defold = pkgs.callPackage ./pkgs/defold.nix { };
   edir = pkgs.callPackage ./pkgs/edir.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
+  julia-bin = pkgs.callPackage ./pkgs/julia-bin.nix { };
   openring = pkgs.callPackage ./pkgs/openring.nix {  };
   segno = pkgs.callPackage ./pkgs/segno.nix { };
   tic-80 = pkgs.callPackage ./pkgs/tic-80.nix { };
