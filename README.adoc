@@ -32,7 +32,7 @@ You can look at the https://github.com/nix-community/NUR[official NUR README] fo
 
 == Status
 
-![Build and populate cache](https://github.com/nix-community/foo-dogsquared/workflows/Build%20and%20populate%20cache/badge.svg)
+image::https://github.com/nix-community/foo-dogsquared/workflows/Build%20and%20populate%20cache/badge.svg[Build and populate cache]
 
-[![Cachix Cache](https://img.shields.io/badge/cachix-foo-dogsquared-blue.svg)](https://foo-dogsquared.cachix.org)
+link:https://foo-dogsquared.cachix.org[image::https://img.shields.io/badge/cachix-foo-dogsquared-blue.svg[Cachix cache]]
 

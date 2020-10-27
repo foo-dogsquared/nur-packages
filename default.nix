@@ -6,7 +6,6 @@
 # commands such as:
 #     nix-build -A mypackage
 
-{ pkgs ? import <nixpkgs> {} }:
 { pkgs ? import <nixpkgs> { } }:
 
 {
@@ -24,8 +23,6 @@
   openring = pkgs.callPackage ./pkgs/openring.nix { };
   segno = pkgs.callPackage ./pkgs/segno.nix { };
   tic-80 = pkgs.callPackage ./pkgs/tic-80.nix { };
-  # pypng = pkgs.callPackage ./pkgs/python-packages/pypng.nix { };
-  # pyzbar = pkgs.callPackage ./pkgs/python-packages/pyzbar.nix {  };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
+  wikiman = pkgs.callPackage ./pkgs/wikiman { };
 }
 
