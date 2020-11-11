@@ -17,6 +17,7 @@
   brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
   defold = pkgs.callPackage ./pkgs/defold.nix { };
   edir = pkgs.callPackage ./pkgs/edir.nix { };
+  flavours = pkgs.callPackage ./pkgs/flavours.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
   julia-bin = pkgs.callPackage ./pkgs/julia-bin.nix { };
   license-cli = pkgs.callPackage ./pkgs/license-cli.nix { };
