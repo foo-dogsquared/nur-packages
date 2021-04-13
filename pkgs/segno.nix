@@ -22,6 +22,5 @@ buildPythonApplication rec {
     description = "Encode QR codes without dependencies (except Python).";
     homepage = "https://github.com/heuer/segno";
     license = licenses.bsd3;
-    maintainers = with maintainers; [ foo-dogsquared ];
   };
 }

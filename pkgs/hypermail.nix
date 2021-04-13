@@ -26,7 +26,6 @@ stdenv.mkDerivation rec {
     description = "A converter for emails from Unix mbox format.";
     homepage = "http://www.hypermail-project.org/";
     license = licenses.gpl2;
-    maintainers = [ maintainers.foo-dogsquared ];
     platforms = [ "i686-linux" "x86_64-linux" ];
   };
 }

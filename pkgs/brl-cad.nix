@@ -30,7 +30,6 @@ clangStdenv.mkDerivation rec {
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
-    maintainers = with maintainers; [ foo-dogsquared ];
     platforms = platforms.linux ++ platforms.freebsd ++ platforms.netbsd
       ++ platforms.openbsd;
   };

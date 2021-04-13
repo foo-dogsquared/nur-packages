@@ -18,6 +18,5 @@ buildGoModule rec {
     description = "Tool for generating a webring from a list of RSS feeds.";
     homepage = "https://git.sr.ht/~sircmpwn/openring";
     license = licenses.gpl3;
-    maintainers = with maintainers; [ foo-dogsquared ];
   };
 }

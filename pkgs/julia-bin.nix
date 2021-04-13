@@ -24,7 +24,6 @@ stdenv.mkDerivation rec {
     description = "The binary build for Julia 1.5 on 64-bit Linux systems.";
     homepage = "https://julialang.org/";
     license = licenses.free;
-    maintainers = with maintainers; [ foo-dogsquared ];
     platforms = [ "x86_64-linux" ];
   };
 }

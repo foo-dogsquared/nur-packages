@@ -18,6 +18,5 @@ buildGoModule rec {
     description = "Hotkey daemon inspired from SXHKD featuring more elegant syntax.";
     homepage = "https://github.com/dakyskye/dxhd";
     license = licenses.mit;
-    maintainers = with maintainers; [ foo-dogsquared ];
   };
 }
