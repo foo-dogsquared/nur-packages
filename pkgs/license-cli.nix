@@ -13,7 +13,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256:1gdlhhrcdni2g14schrgj8vx8pinvmxwpss8ziiazal9sz1rak47";
   };
 
-  cargoHash = "sha256:1ykahq7030hsgwlxsmizb73rs8j1438dz3350760a9ps0lazpf28";
+  cargoSha256 = "sha256:0r0dj6fd971fifrv8rppvmq6fwlaqrdh54sf9gb4kwfwz8vs5iv8";
 
   postInstall = ''
     ${scdoc}/bin/scdoc < doc/license.scd > license.1
