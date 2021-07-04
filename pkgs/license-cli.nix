@@ -3,17 +3,17 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "license";
-  version = "2.4.0";
+  version = "2.5.0";
 
   nativeBuildInputs = [ installShellFiles ];
 
   src = fetchgit {
     url = "https://git.sr.ht/~zethra/license";
     rev = "${version}";
-    sha256 = "sha256:1gdlhhrcdni2g14schrgj8vx8pinvmxwpss8ziiazal9sz1rak47";
+    sha256 = "sha256:0dwrciyfr2ac6lh0xyws9vz60xqwdfd0mli99fkvshccyff9yfdj";
   };
 
-  cargoSha256 = "sha256:0r0dj6fd971fifrv8rppvmq6fwlaqrdh54sf9gb4kwfwz8vs5iv8";
+  cargoSha256 = "sha256:1vq373935dyjlg4d4rr62ab3fcglcrwc86748yal1az2bh7wac98";
 
   postInstall = ''
     ${scdoc}/bin/scdoc < doc/license.scd > license.1
