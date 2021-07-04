@@ -18,6 +18,7 @@
   dxhd = pkgs.callPackage ./pkgs/dxhd.nix { };
   edir = pkgs.callPackage ./pkgs/edir.nix { };
   flavours = pkgs.callPackage ./pkgs/flavours.nix { };
+  libcs50 = pkgs.callPackage ./pkgs/libcs50.nix { };
   #hantemcli = pkgs.callPackage ./pkgs/hantemcli.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
   julia-bin = pkgs.callPackage ./pkgs/julia-bin.nix { };
