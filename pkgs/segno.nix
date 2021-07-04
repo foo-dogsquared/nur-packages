@@ -1,7 +1,7 @@
 # As of 2020-09-06, there will be no testing due to one of the library (pyzbar) being broken.
 # See the following issue:
 # https://github.com/NixOS/nixpkgs/issues/7307
-{ stdenv, fetchFromGitHub, python3 }:
+{ stdenv, lib, fetchFromGitHub, python3 }:
 
 with python3.pkgs;
 buildPythonApplication rec {
@@ -18,7 +18,7 @@ buildPythonApplication rec {
   # For now, testing will be skipped due to broken library.
   doCheck = false;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Encode QR codes without dependencies (except Python).";
     homepage = "https://github.com/heuer/segno";
     license = licenses.bsd3;

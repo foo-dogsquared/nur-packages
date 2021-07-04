@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, yacc }:
+{ stdenv, lib, fetchFromGitHub, yacc }:
 
 stdenv.mkDerivation rec {
   pname = "hypermail";
@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     --with-httpdir="$out/share/hypermail" --with-htmldir="$out/share/hypermail/docs"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A converter for emails from Unix mbox format.";
     homepage = "http://www.hypermail-project.org/";
     license = licenses.gpl2;

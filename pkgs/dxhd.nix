@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, buildGoModule }:
+{ stdenv, lib, fetchgit, buildGoModule }:
 
 buildGoModule rec {
   pname = "dxhd";
@@ -14,7 +14,7 @@ buildGoModule rec {
 
   subPackages = [ "." ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Hotkey daemon inspired from SXHKD featuring more elegant syntax.";
     homepage = "https://github.com/dakyskye/dxhd";
     license = licenses.mit;
