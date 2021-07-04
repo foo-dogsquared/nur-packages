@@ -7,10 +7,10 @@ rustPlatform.buildRustPackage rec {
   src = fetchgit {
     url = "https://github.com/foo-dogsquared/hantemcli";
     rev = "v${version}";
-    sha256 = "sha256-jUSjcxL3DPa/F9gsx7fGNeqeGlZB+rpusulqmTBUgj0=";
+    sha256 = "sha256:jUSjcxL3DPa/F9gsx7fGNeqeGlZB+rpusulqmTBUgj0=";
   };
 
-  cargoHash = "sha256:1z17l6l86vdlqch7wgx16hf564f1zlncz3v60i4x0kipabr1msc7";
+  cargoHash = "sha256:0c3zlschzpx8mq9c62g50mqwy4zz9mcck52bdwf446x8jzsifp02";
 
   meta = with lib; {
     description =

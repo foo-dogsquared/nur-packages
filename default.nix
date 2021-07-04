@@ -14,10 +14,10 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  #brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
+  brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
   dxhd = pkgs.callPackage ./pkgs/dxhd.nix { };
   libcs50 = pkgs.callPackage ./pkgs/libcs50.nix { };
-  #hantemcli = pkgs.callPackage ./pkgs/hantemcli.nix { };
+  hantemcli = pkgs.callPackage ./pkgs/hantemcli.nix { };
   hypermail = pkgs.callPackage ./pkgs/hypermail.nix { };
   julia-bin = pkgs.callPackage ./pkgs/julia-bin.nix { };
   license-cli = pkgs.callPackage ./pkgs/license-cli.nix { };

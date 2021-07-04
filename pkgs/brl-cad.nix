@@ -1,4 +1,10 @@
-{ clangStdenv, cmake, fetchsvn, libGL, libXi, libXft, ncurses }:
+# I don't use this one anymore (only for a certain class).
+# I'll get rid of this, eventually.
+# But I want to make this as a practice package for a package this complex for now. ;p
+#
+# I doubt this will reach into the nixpkgs repo since "MANY BINARIES" + "COMPLEX AF" = "REALLY HARD TO TEST THIS OUT".
+# It was stupid of me to request BRL-CAD in the nixpkgs issue tracker now that I think about it.
+{ lib, clangStdenv, cmake, fetchsvn, libGL, libXi, libXft, ncurses }:
 
 clangStdenv.mkDerivation rec {
   pname = "brl-cad";
@@ -26,7 +32,8 @@ clangStdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with clangStdenv.lib; {
+  meta = with lib; {
+    broken = true;
     description = "A free and open-source 3D solid modelling system.";
     homepage = "http://www.brlcad.org/";
     license = licenses.free;
