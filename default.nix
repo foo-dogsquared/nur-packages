@@ -14,6 +14,7 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
+  awesome-cli = pkgs.callPackage ./pkgs/awesome-cli.nix { };
   brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
   dxhd = pkgs.callPackage ./pkgs/dxhd.nix { };
   libcs50 = pkgs.callPackage ./pkgs/libcs50.nix { };
