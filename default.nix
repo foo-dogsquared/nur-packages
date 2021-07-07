@@ -16,6 +16,7 @@
 
   awesome-cli = pkgs.callPackage ./pkgs/awesome-cli.nix { };
   brl-cad = pkgs.callPackage ./pkgs/brl-cad.nix { };
+  doggo = pkgs.callPackage ./pkgs/doggo.nix { };
   dxhd = pkgs.callPackage ./pkgs/dxhd.nix { };
   libcs50 = pkgs.callPackage ./pkgs/libcs50.nix { };
   hantemcli = pkgs.callPackage ./pkgs/hantemcli.nix { };
